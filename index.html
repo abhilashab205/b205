@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 BHK Luxury Apartment in Abhilasha, Varthur</title>
+    <style>
+      :root {
+        --primary-color: #007bff; /* Blue */
+        --secondary-color: #28a745; /* Green */
+        --text-color: #343a40;
+        --bg-light: #f8f9fa;
+        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        font-family: var(--font-family);
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        color: var(--text-color);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* --- Header/Hero Section --- */
+      .hero {
+        background-color: var(--bg-light);
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.1em;
+        color: #6c757d;
+      }
+
+      .key-facts {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .fact-item {
+        background-color: white;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+        color: var(--text-color);
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 12px 30px;
+        margin-top: 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #218838;
+      }
+
+      /* --- Image Gallery / Carousel --- */
+      .gallery {
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .carousel {
+        position: relative;
+        max-width: 100%;
+        margin: 10px auto;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #e9ecef;
+      }
+
+      .carousel .slides {
+        position: relative;
+        height: 500px;
+        /* height: 100%; */
+      }
+
+      .carousel .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 400ms ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .carousel .slide.active {
+        opacity: 1;
+        position: relative;
+      }
+
+      .carousel .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.45);
+        color: white;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1.25rem;
+      }
+
+      .carousel-btn.prev {
+        left: 12px;
+      }
+      .carousel-btn.next {
+        right: 12px;
+      }
+
+      .carousel-btn:focus {
+        outline: 2px solid #fff;
+      }
+
+      .indicators {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 12px;
+        display: flex;
+        gap: 8px;
+      }
+
+      .indicator {
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .indicator.active {
+        background: var(--primary-color);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 767px) {
+        .carousel .slides {
+          height: 240px;
+        }
+        .carousel-btn {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      /* --- General Section Styling --- */
+      section {
+        padding: 40px 0;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      h2 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      /* --- Property & Society Details --- */
+      .details-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .detail-block {
+        padding: 20px;
+        background-color: var(--bg-light);
+        border-radius: 8px;
+      }
+
+      .detail-block h3 {
+        color: var(--primary-color);
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+
+      .amenity-list,
+      .neighborhood-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        column-count: 2; /* Desktop view */
+        column-gap: 20px;
+      }
+
+      .amenity-list li,
+      .neighborhood-list li {
+        padding: 8px 0;
+        border-bottom: 1px dotted #ccc;
+      }
+
+      .amenity-list li::before,
+      .neighborhood-list li::before {
+        content: '✅';
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      /* --- Map Integration --- */
+      .map-container {
+        height: 400px;
+        background-color: #dee2e6;
+        line-height: 400px;
+        text-align: center;
+        color: #6c757d;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
+      /* --- Owner Contact Section --- */
+      .contact-card {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .contact-card h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+      }
+
+      .contact-card p {
+        font-size: 1.1em;
+        margin: 5px 0;
+      }
+
+      /* --- Footer --- */
+      footer {
+        text-align: center;
+        padding: 20px 0;
+        background-color: var(--text-color);
+        color: white;
+      }
+
+      /* --- Media Queries for Mobile Responsiveness --- */
+      @media (min-width: 768px) {
+        .details-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .amenity-list,
+        .neighborhood-list {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hero h1 {
+          font-size: 2em;
+        }
+        .amenity-list,
+        .neighborhood-list {
+          column-count: 1; /* Single column on mobile */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <h1>✨ Premium 3 BHK Ready to Move in Abhilasha, Varthur ✨</h1>
+        <p>
+          Spacious, well-ventilated apartment on Balagere Road, offering the
+          perfect blend of serenity and connectivity in East Bengaluru.
+        </p>
+
+        <div class="key-facts">
+          <div class="fact-item">Property Type: Apartment</div>
+          <div class="fact-item">Configuration: 3 BHK, 2 Bathroom</div>
+          <div class="fact-item">Location: Balagere Road, Varthur</div>
+          <div class="fact-item">Status: Ready to Move</div>
+        </div>
+
+        <a href="#contact" class="cta-button"
+          >📞 Contact Owner Directly for Price</a
+        >
+      </div>
+    </header>
+
+    <section class="gallery">
+      <div class="container">
+        <h2>🏠 Property Visuals</h2>
+        <div class="carousel" aria-label="Property images carousel">
+          <div class="slides">
+            <div class="slide active">
+              <img src="images/1.jpg" alt="Living room - main view" />
+            </div>
+            <div class="slide">
+              <img src="images/2.jpg" alt="Master bedroom" />
+            </div>
+            <div class="slide">
+              <img src="images/3.jpg" alt="Kitchen and dining" />
+            </div>
+          </div>
+
+          <button class="carousel-btn prev" aria-label="Previous slide">
+            ‹
+          </button>
+          <button class="carousel-btn next" aria-label="Next slide">›</button>
+
+          <div class="indicators" role="tablist">
+            <button
+              class="indicator active"
+              data-slide="0"
+              aria-label="Show slide 1"
+              role="tab"
+            ></button>
+            <button
+              class="indicator"
+              data-slide="1"
+              aria-label="Show slide 2"
+              role="tab"
+            ></button>
+            <button
+              class="indicator"
+              data-slide="2"
+              aria-label="Show slide 3"
+              role="tab"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="description">
+      <div class="container">
+        <h2>🗝️ Your New Home Awaits</h2>
+        <p>
+          Step into this beautifully designed 3 BHK that prioritizes comfort and
+          functionality. The apartment features a large living area,
+          well-appointed bedrooms, and a modern, semi-furnished kitchen. Enjoy
+          ample natural light and cross-ventilation throughout the day, ensuring
+          a refreshing living experience. Located in the coveted Abhilasha
+          complex, this home is perfect for modern family living.
+        </p>
+      </div>
+    </section>
+
+    <section class="community-details">
+      <div class="container">
+        <h2>🏘️ Abhilasha Community & Amenities</h2>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h3>Abhilasha Society Overview</h3>
+            <p>
+              A vibrant, well-maintained residential complex known for its
+              peaceful environment and family-friendly amenities. The society
+              has robust security and dedicated staff, ensuring a hassle-free
+              lifestyle.
+            </p>
+          </div>
+          <div class="detail-block">
+            <h3>Key Amenities</h3>
+            <ul class="amenity-list">
+              <li>Swimming Pool</li>
+              <li>Gymnasium</li>
+              <li>Party Hall</li>
+              <li>Dedicated Covered Parking Area</li>
+              <li>Outdoor Walking Track</li>
+              <li>Children's Play Area</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="neighborhood-details">
+      <div class="container">
+        <h2>📍 Location Advantage: Everything Within Reach</h2>
+        <p>
+          Balagere Road offers excellent connectivity to major IT hubs while
+          retaining a calm residential feel. Essential services, dining, and
+          recreation are just minutes away.
+        </p>
+
+        <div class="detail-block" style="margin-top: 10px">
+          <h3>Nearby Services & Landmarks</h3>
+          <ul class="neighborhood-list">
+            <li>
+              <strong>Financial Services:</strong> Multiple bank ATMs (SBI,
+              AXIS, HDFC, ICICI) and branches within 100-200 m.
+            </li>
+            <li>
+              <strong>Schools:</strong> NPS marathahalli, Sri chaitanya
+              pathways, Kids castle pre school within 100-200 m.
+            </li>
+            <li>
+              <strong>Shopping Complex</strong>
+            </li>
+            <li>
+              <strong>Local Shops:</strong> Daily needs and grocery stores right
+              outside the society.
+            </li>
+            <li>
+              <strong>Restaurants:</strong> Wide range of local eateries and
+              dining options nearby.
+            </li>
+            <li>
+              <strong>Snacks & Cafes:</strong> Popular coffee shops and snack
+              outlets accessible via short drive.
+            </li>
+            <li>
+              <strong>Tech Park:</strong> Close proximity to Prestige Tech Park
+              and other IT tech parks.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="container">
+        <h2>Property Location</h2>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.501649933271!2d77.73432537493211!3d12.939719615576722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae13b4db7c4a5d%3A0xc7607e3668ca1839!2sAbhilasha%20Apartment!5e0!3m2!1sen!2sin!4v1763135284615!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="owner-contact" id="contact">
+      <div class="container">
+        <h2>🤝 Contact the Owner Directly</h2>
+        <div class="contact-card">
+          <h3>Genuine Buyers Are Welcome!</h3>
+          <p>
+            Contact the owner directly to schedule a private viewing and discuss
+            the final price.
+          </p>
+          <hr style="border-color: rgba(255, 255, 255, 0.3)" />
+
+          <p><strong>Owner Name:</strong> Animesh Malhotra</p>
+          <p>
+            <strong>Phone/ Whatsapp:</strong>
+            <a
+              href="tel:[Phone Number]"
+              style="color: yellow; text-decoration: none; font-size: 1.3em"
+              >+91-8861268683</a
+            >
+          </p>
+
+          <p style="margin-top: 20px">We look forward to hearing from you!</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      ;(function () {
+        const slides = document.querySelectorAll('.carousel .slide')
+        const indicators = document.querySelectorAll('.indicator')
+        const prevBtn = document.querySelector('.carousel-btn.prev')
+        const nextBtn = document.querySelector('.carousel-btn.next')
+        let current = 0
+        let timer = null
+
+        function show(n) {
+          slides.forEach((s, i) => s.classList.toggle('active', i === n))
+          indicators.forEach((b, i) => b.classList.toggle('active', i === n))
+          current = n
+        }
+
+        function next() {
+          show((current + 1) % slides.length)
+        }
+
+        function prev() {
+          show((current - 1 + slides.length) % slides.length)
+        }
+
+        function startTimer() {
+          timer = setInterval(next, 4000)
+        }
+
+        function resetTimer() {
+          clearInterval(timer)
+          startTimer()
+        }
+
+        if (nextBtn)
+          nextBtn.addEventListener('click', () => {
+            next()
+            resetTimer()
+          })
+        if (prevBtn)
+          prevBtn.addEventListener('click', () => {
+            prev()
+            resetTimer()
+          })
+
+        indicators.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const idx = Number(btn.dataset.slide)
+            if (!Number.isNaN(idx)) {
+              show(idx)
+              resetTimer()
+            }
+          })
+        })
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            prev()
+            resetTimer()
+          }
+          if (e.key === 'ArrowRight') {
+            next()
+            resetTimer()
+          }
+        })
+
+        if (slides.length > 0) {
+          show(0)
+          startTimer()
+        }
+      })()
+    </script>
+  </body>
+</html>
