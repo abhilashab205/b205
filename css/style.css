@@ -1,0 +1,369 @@
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #28a745; /* Green */
+  --text-color: #343a40;
+  --bg-light: #f8f9fa;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* --- Header/Hero Section --- */
+.hero {
+  background-color: var(--bg-light);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.1em;
+  color: #6c757d;
+}
+
+.key-facts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.fact-item {
+  background-color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 12px 30px;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #218838;
+}
+
+/* --- Image Gallery / Carousel --- */
+.gallery {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: 10px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #e9ecef;
+}
+
+.carousel .slides {
+  position: relative;
+  height: 500px;
+  /* height: 100%; */
+}
+
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.45);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 12px;
+}
+.carousel-btn.next {
+  right: 12px;
+}
+
+.carousel-btn:focus {
+  outline: 2px solid #fff;
+}
+
+.indicators {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.indicator.active {
+  background: var(--primary-color);
+}
+
+/* --- Gallery Sections --- */
+.gallery-section {
+  margin-bottom: 30px;
+  padding: 20px 0;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.gallery-section:last-child {
+  border-bottom: none;
+}
+
+.gallery-section h3 {
+  color: var(--primary-color);
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* --- Video Section --- */
+.video-section {
+  padding: 40px 0;
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  margin: 30px 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .carousel .slides {
+    height: 280px;
+  }
+  .carousel-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .gallery-section h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel .slides {
+    height: 200px;
+  }
+  .carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+  .gallery-section h3 {
+    font-size: 1.1em;
+  }
+}
+
+/* --- General Section Styling --- */
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* --- Property & Society Details --- */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.detail-block {
+  padding: 20px;
+  background-color: var(--bg-light);
+  border-radius: 8px;
+}
+
+.detail-block h3 {
+  color: var(--primary-color);
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.amenity-list,
+.neighborhood-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  column-count: 2; /* Desktop view */
+  column-gap: 20px;
+}
+
+.amenity-list li,
+.neighborhood-list li {
+  padding: 8px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.amenity-list li::before,
+.neighborhood-list li::before {
+  content: '✅';
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* --- Map Integration --- */
+.map-container {
+  height: 400px;
+  background-color: #dee2e6;
+  line-height: 400px;
+  text-align: center;
+  color: #6c757d;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* --- Owner Contact Section --- */
+.contact-card {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.contact-card h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.contact-card p {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: var(--text-color);
+  color: white;
+}
+
+/* --- Media Queries for Mobile Responsiveness --- */
+@media (min-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .amenity-list,
+  .neighborhood-list {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+  .amenity-list,
+  .neighborhood-list {
+    column-count: 1; /* Single column on mobile */
+  }
+}

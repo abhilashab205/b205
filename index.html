@@ -4,301 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3 BHK Luxury Apartment in Abhilasha, Varthur</title>
-    <style>
-      :root {
-        --primary-color: #007bff; /* Blue */
-        --secondary-color: #28a745; /* Green */
-        --text-color: #343a40;
-        --bg-light: #f8f9fa;
-        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        font-family: var(--font-family);
-        margin: 0;
-        padding: 0;
-        background-color: #fff;
-        color: var(--text-color);
-      }
-
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 15px;
-      }
-
-      /* --- Header/Hero Section --- */
-      .hero {
-        background-color: var(--bg-light);
-        padding: 40px 0;
-        text-align: center;
-      }
-
-      .hero h1 {
-        color: var(--primary-color);
-        margin-bottom: 10px;
-        font-size: 2.5em;
-      }
-
-      .hero p {
-        font-size: 1.1em;
-        color: #6c757d;
-      }
-
-      .key-facts {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 20px;
-      }
-
-      .fact-item {
-        background-color: white;
-        padding: 10px 20px;
-        margin: 5px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        font-weight: bold;
-        color: var(--text-color);
-      }
-
-      .cta-button {
-        display: inline-block;
-        background-color: var(--secondary-color);
-        color: white;
-        padding: 12px 30px;
-        margin-top: 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 1.1em;
-        font-weight: bold;
-        transition: background-color 0.3s;
-      }
-
-      .cta-button:hover {
-        background-color: #218838;
-      }
-
-      /* --- Image Gallery / Carousel --- */
-      .gallery {
-        padding: 20px 0;
-        text-align: center;
-      }
-
-      .carousel {
-        position: relative;
-        max-width: 100%;
-        margin: 10px auto;
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: #e9ecef;
-      }
-
-      .carousel .slides {
-        position: relative;
-        height: 500px;
-        /* height: 100%; */
-      }
-
-      .carousel .slide {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        transition: opacity 400ms ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .carousel .slide.active {
-        opacity: 1;
-        position: relative;
-      }
-
-      .carousel .slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.45);
-        color: white;
-        border: none;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.25rem;
-      }
-
-      .carousel-btn.prev {
-        left: 12px;
-      }
-      .carousel-btn.next {
-        right: 12px;
-      }
-
-      .carousel-btn:focus {
-        outline: 2px solid #fff;
-      }
-
-      .indicators {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 12px;
-        display: flex;
-        gap: 8px;
-      }
-
-      .indicator {
-        width: 12px;
-        height: 12px;
-        background: rgba(255, 255, 255, 0.6);
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-      }
-
-      .indicator.active {
-        background: var(--primary-color);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 767px) {
-        .carousel .slides {
-          height: 240px;
-        }
-        .carousel-btn {
-          width: 36px;
-          height: 36px;
-        }
-      }
-
-      /* --- General Section Styling --- */
-      section {
-        padding: 40px 0;
-        border-bottom: 1px solid #dee2e6;
-      }
-
-      h2 {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 2em;
-      }
-
-      /* --- Property & Society Details --- */
-      .details-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .detail-block {
-        padding: 20px;
-        background-color: var(--bg-light);
-        border-radius: 8px;
-      }
-
-      .detail-block h3 {
-        color: var(--primary-color);
-        border-bottom: 2px solid #ccc;
-        padding-bottom: 10px;
-        margin-top: 0;
-      }
-
-      .amenity-list,
-      .neighborhood-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        column-count: 2; /* Desktop view */
-        column-gap: 20px;
-      }
-
-      .amenity-list li,
-      .neighborhood-list li {
-        padding: 8px 0;
-        border-bottom: 1px dotted #ccc;
-      }
-
-      .amenity-list li::before,
-      .neighborhood-list li::before {
-        content: '✅';
-        margin-right: 10px;
-        font-weight: bold;
-      }
-
-      /* --- Map Integration --- */
-      .map-container {
-        height: 400px;
-        background-color: #dee2e6;
-        line-height: 400px;
-        text-align: center;
-        color: #6c757d;
-        border-radius: 8px;
-        margin-top: 20px;
-      }
-
-      /* --- Owner Contact Section --- */
-      .contact-card {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 30px;
-        border-radius: 8px;
-        text-align: center;
-      }
-
-      .contact-card h3 {
-        margin-top: 0;
-        font-size: 1.5em;
-      }
-
-      .contact-card p {
-        font-size: 1.1em;
-        margin: 5px 0;
-      }
-
-      /* --- Footer --- */
-      footer {
-        text-align: center;
-        padding: 20px 0;
-        background-color: var(--text-color);
-        color: white;
-      }
-
-      /* --- Media Queries for Mobile Responsiveness --- */
-      @media (min-width: 768px) {
-        .details-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-        .amenity-list,
-        .neighborhood-list {
-          column-count: 2;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .hero h1 {
-          font-size: 2em;
-        }
-        .amenity-list,
-        .neighborhood-list {
-          column-count: 1; /* Single column on mobile */
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="hero">
@@ -325,47 +31,332 @@
     <section class="gallery">
       <div class="container">
         <h2>🏠 Property Visuals</h2>
-        <div class="carousel" aria-label="Property images carousel">
-          <div class="slides">
-            <div class="slide active">
-              <img src="images/1.jpg" alt="Living room - main view" />
+
+        <!-- Overall View -->
+        <div class="gallery-section">
+          <h3>📋 Overall View</h3>
+          <div class="carousel" aria-label="Overall view carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/overall/overall-1.jpg" alt="Overall view 1" />
+              </div>
+              <div class="slide">
+                <img src="images/overall/overall-2.jpg" alt="Overall view 2" />
+              </div>
+              <div class="slide">
+                <img src="images/overall/overall-3.jpg" alt="Overall view 3" />
+              </div>
+              <div class="slide">
+                <img src="images/overall/overall-4.jpg" alt="Overall view 4" />
+              </div>
             </div>
-            <div class="slide">
-              <img src="images/2.jpg" alt="Master bedroom" />
-            </div>
-            <div class="slide">
-              <img src="images/3.jpg" alt="Kitchen and dining" />
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="3"
+                aria-label="Show slide 4"
+                role="tab"
+              ></button>
             </div>
           </div>
+        </div>
 
-          <button class="carousel-btn prev" aria-label="Previous slide">
-            ‹
-          </button>
-          <button class="carousel-btn next" aria-label="Next slide">›</button>
+        <!-- Master Bedroom -->
+        <div class="gallery-section">
+          <h3>🛏️ Master Bedroom</h3>
+          <div class="carousel" aria-label="Master bedroom carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/mbr/master-bedroom-1.jpg" alt="Master bedroom 1" />
+              </div>
+              <div class="slide">
+                <img src="images/mbr/master-bedroom-2.jpg" alt="Master bedroom 2" />
+              </div>
+              <div class="slide">
+                <img src="images/mbr/master-bedroom-3.jpg" alt="Master bedroom 3" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+            </div>
+          </div>
+        </div>
 
-          <div class="indicators" role="tablist">
-            <button
-              class="indicator active"
-              data-slide="0"
-              aria-label="Show slide 1"
-              role="tab"
-            ></button>
-            <button
-              class="indicator"
-              data-slide="1"
-              aria-label="Show slide 2"
-              role="tab"
-            ></button>
-            <button
-              class="indicator"
-              data-slide="2"
-              aria-label="Show slide 3"
-              role="tab"
-            ></button>
+        <!-- Hall -->
+        <!-- <div class="gallery-section">
+          <h3>🍽️ Hall / Dining Area</h3>
+          <div class="carousel" aria-label="Hall carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/hall-1.jpg" alt="Hall 1" />
+              </div>
+              <div class="slide">
+                <img src="images/hall-2.jpg" alt="Hall 2" />
+              </div>
+              <div class="slide">
+                <img src="images/hall-3.jpg" alt="Hall 3" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Living Room -->
+        <!-- <div class="gallery-section">
+          <h3>🛋️ Living Room</h3>
+          <div class="carousel" aria-label="Living room carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/living-1.jpg" alt="Living room 1" />
+              </div>
+              <div class="slide">
+                <img src="images/living-2.jpg" alt="Living room 2" />
+              </div>
+              <div class="slide">
+                <img src="images/living-3.jpg" alt="Living room 3" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Kitchen -->
+        <!-- <div class="gallery-section">
+          <h3>🍳 Kitchen</h3>
+          <div class="carousel" aria-label="Kitchen carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/kitchen-1.jpg" alt="Kitchen 1" />
+              </div>
+              <div class="slide">
+                <img src="images/kitchen-2.jpg" alt="Kitchen 2" />
+              </div>
+              <div class="slide">
+                <img src="images/kitchen-3.jpg" alt="Kitchen 3" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Balcony -->
+        <!-- <div class="gallery-section">
+          <h3>🌳 Balcony</h3>
+          <div class="carousel" aria-label="Balcony carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/balcony-1.jpg" alt="Balcony 1" />
+              </div>
+              <div class="slide">
+                <img src="images/balcony-2.jpg" alt="Balcony 2" />
+              </div>
+              <div class="slide">
+                <img src="images/balcony-3.jpg" alt="Balcony 3" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Utility -->
+        <!-- <div class="gallery-section">
+          <h3>🧺 Utility / Laundry Room</h3>
+          <div class="carousel" aria-label="Utility room carousel">
+            <div class="slides">
+              <div class="slide active">
+                <img src="images/utility-1.jpg" alt="Utility room 1" />
+              </div>
+              <div class="slide">
+                <img src="images/utility-2.jpg" alt="Utility room 2" />
+              </div>
+              <div class="slide">
+                <img src="images/utility-3.jpg" alt="Utility room 3" />
+              </div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous slide">
+              ‹
+            </button>
+            <button class="carousel-btn next" aria-label="Next slide">›</button>
+            <div class="indicators" role="tablist">
+              <button
+                class="indicator active"
+                data-slide="0"
+                aria-label="Show slide 1"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="1"
+                aria-label="Show slide 2"
+                role="tab"
+              ></button>
+              <button
+                class="indicator"
+                data-slide="2"
+                aria-label="Show slide 3"
+                role="tab"
+              ></button>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <!-- Video Section -->
+    <!-- <section class="video-section">
+      <div class="container">
+        <h2>🎥 Property Video Tour</h2>
+        <div class="video-container">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Property Video Tour"
+            ></iframe>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 15px; color: #6c757d">
+          Watch a complete walkthrough of the property. Replace the video link
+          with your actual property video URL.
+        </p>
+      </div>
+    </section> -->
 
     <section class="description">
       <div class="container">
@@ -501,74 +492,80 @@
         <p>&copy; 2025 All rights reserved.</p>
       </div>
     </footer>
+
+
     <script>
       ;(function () {
-        const slides = document.querySelectorAll('.carousel .slide')
-        const indicators = document.querySelectorAll('.indicator')
-        const prevBtn = document.querySelector('.carousel-btn.prev')
-        const nextBtn = document.querySelector('.carousel-btn.next')
-        let current = 0
-        let timer = null
+        
+        // Initialize each carousel independently
+        document.querySelectorAll('.carousel').forEach((carousel) => {
+          const slides = carousel.querySelectorAll('.slide')
+          const indicators = carousel.querySelectorAll('.indicator')
+          const prevBtn = carousel.querySelector('.carousel-btn.prev')
+          const nextBtn = carousel.querySelector('.carousel-btn.next')
+          let current = 0
+          let timer = null
 
-        function show(n) {
-          slides.forEach((s, i) => s.classList.toggle('active', i === n))
-          indicators.forEach((b, i) => b.classList.toggle('active', i === n))
-          current = n
-        }
+          function show(n) {
+            slides.forEach((s, i) => s.classList.toggle('active', i === n))
+            indicators.forEach((b, i) => b.classList.toggle('active', i === n))
+            current = n
+          }
 
-        function next() {
-          show((current + 1) % slides.length)
-        }
+          function next() {
+            show((current + 1) % slides.length)
+          }
 
-        function prev() {
-          show((current - 1 + slides.length) % slides.length)
-        }
+          function prev() {
+            show((current - 1 + slides.length) % slides.length)
+          }
 
-        function startTimer() {
-          timer = setInterval(next, 4000)
-        }
+          function startTimer() {
+            timer = setInterval(next, 4000)
+          }
 
-        function resetTimer() {
-          clearInterval(timer)
-          startTimer()
-        }
+          function resetTimer() {
+            clearInterval(timer)
+            startTimer()
+          }
 
-        if (nextBtn)
-          nextBtn.addEventListener('click', () => {
-            next()
-            resetTimer()
+          if (nextBtn)
+            nextBtn.addEventListener('click', () => {
+              next()
+              resetTimer()
+            })
+          if (prevBtn)
+            prevBtn.addEventListener('click', () => {
+              prev()
+              resetTimer()
+            })
+
+          indicators.forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const idx = Number(btn.dataset.slide)
+              if (!Number.isNaN(idx)) {
+                show(idx)
+                resetTimer()
+              }
+            })
           })
-        if (prevBtn)
-          prevBtn.addEventListener('click', () => {
-            prev()
-            resetTimer()
-          })
 
-        indicators.forEach((btn) => {
-          btn.addEventListener('click', () => {
-            const idx = Number(btn.dataset.slide)
-            if (!Number.isNaN(idx)) {
-              show(idx)
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+              prev()
+              resetTimer()
+            }
+            if (e.key === 'ArrowRight') {
+              next()
               resetTimer()
             }
           })
-        })
 
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') {
-            prev()
-            resetTimer()
-          }
-          if (e.key === 'ArrowRight') {
-            next()
-            resetTimer()
+          if (slides.length > 0) {
+            show(0)
+            startTimer()
           }
         })
-
-        if (slides.length > 0) {
-          show(0)
-          startTimer()
-        }
       })()
     </script>
   </body>
